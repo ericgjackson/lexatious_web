@@ -1,0 +1,26 @@
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.buttonLabel {
+  text-align: center;
+}
+
+.text {
+  margin-top: 20px;
+  min-height: 32px;
+}

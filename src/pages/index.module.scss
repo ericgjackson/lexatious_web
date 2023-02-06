@@ -1,0 +1,112 @@
+@import 'styles/mixins';
+
+.index {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  min-width: 900px;
+  min-height: 700px;
+  opacity: 0;
+  overflow: hidden;
+  transition: var(--transition);
+  transition-duration: var(--transition--duration--long);
+
+  &.initialized {
+    opacity: 1;
+  }
+}
+
+.nav {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: flex;
+  align-items: flex-start;
+  padding: var(--spacing--l);
+}
+
+.gameButtons {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: var(--spacing--l);
+}
+
+.navLogo {
+  display: flex;
+  flex: 1;
+}
+
+.logoContainer {
+  display: flex;
+}
+
+.logo {
+  height: 60px;
+  user-select: none;
+
+  @include tablet {
+    height: 48px;
+  }
+}
+
+.contentWrapper {
+  $board-size: 15;
+  $tile-size-max: 60px;
+  $tile-border-size: 1px;
+
+  flex: 1;
+  padding: 0 var(--spacing--xl);
+  max-height: $board-size * ($tile-size-max + $tile-border-size) + $tile-border-size;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.boardContainer {
+  display: flex;
+  position: relative;
+}
+
+.dictionary {
+  display: flex;
+  flex-direction: column;
+}
+
+.dictionaryOutput {
+  flex: 1;
+  border-bottom: var(--border);
+}
+
+.dictionaryInput {
+  flex: 0 0 auto;
+}
+
+.rackContainer {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  margin: var(--spacing--xl) var(--spacing--l);
+
+  @include tablet {
+    margin: var(--spacing--l);
+  }
+}
+
+.rack {
+  border: var(--border);
+}
+
+.submitInput {
+  display: none;
+}

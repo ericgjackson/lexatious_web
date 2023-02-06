@@ -1,0 +1,104 @@
+@import 'styles/mixins';
+
+$icon-size: 16px;
+
+.cell {
+  @include focus-effect;
+
+  position: relative;
+  display: table-cell;
+  background-color: white;
+  border-right: var(--border);
+  border-bottom: var(--border);
+  transition: var(--transition);
+  background-clip: padding-box;
+
+  &:focus-within {
+    z-index: 1;
+
+    .actions {
+      display: flex;
+    }
+
+    .action {
+      user-select: initial;
+      pointer-events: auto;
+    }
+  }
+}
+
+.actions {
+  display: none;
+  position: absolute;
+  left: calc(100% + var(--spacing--s) - #{$icon-size});
+  top: -$icon-size;
+  z-index: 2;
+  transition: var(--transition);
+  pointer-events: none;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border--radius);
+}
+
+.action {
+  @include button-reset;
+
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing--s);
+  user-select: none;
+  pointer-events: none;
+  box-sizing: content-box;
+  background-color: white;
+  border: var(--border);
+  border-top-left-radius: var(--border--radius);
+  border-bottom-left-radius: var(--border--radius);
+  font-size: var(--font--size--m);
+  line-height: $icon-size;
+  color: var(--color--foreground--secondary);
+  transition: var(--transition);
+  cursor: pointer;
+
+  & + & {
+    border-left: none;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  &:last-child {
+    border-top-right-radius: var(--border--radius);
+    border-bottom-right-radius: var(--border--radius);
+  }
+
+  &,
+  .filterCell,
+  .toggleDirection {
+    width: $icon-size;
+    height: $icon-size;
+  }
+
+  &:active,
+  &:hover {
+    color: var(--color--foreground);
+  }
+}
+
+.toggleDirection {
+  &.right {
+    transform: rotate(-90deg);
+  }
+}
+
+.iconContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flagContainer {
+  background-color: var(--color--primary);
+}

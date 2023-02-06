@@ -1,0 +1,66 @@
+.option {
+  margin-bottom: var(--spacing--m);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover,
+  &.checked {
+    .flag {
+      box-shadow: var(--box-shadow);
+    }
+  }
+}
+
+.imgContainer {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.bot {
+  &.panda {
+  }
+
+  &.elephant {
+  }
+
+  &.owl {
+  }
+
+  &.raven {
+  }
+}
+
+.botColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.botColumns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.botIconContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+}
+
+.botLabelContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100px;
+  width: 150px;
+}

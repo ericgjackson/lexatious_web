@@ -1,0 +1,9 @@
+**/bin/*.js
+**/build/**/*
+**/coverage/**/*
+**/dist/**/*
+**/node_modules/**/*
+*.d.ts
+.eslintrc.js
+next.config.js
+src/public/service-worker.js

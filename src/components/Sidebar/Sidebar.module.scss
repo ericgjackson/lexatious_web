@@ -1,0 +1,78 @@
+@import 'styles/mixins';
+
+$z-index: 100;
+$width: 370px;
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: $z-index;
+  height: 100vh;
+  width: $width;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.afterOpen {
+  .sidebar {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.beforeClose {
+  .sidebar {
+    transform: translateX($width);
+    opacity: 0;
+  }
+}
+
+.overlay {
+  background-color: transparent;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--color--background);
+  box-shadow: var(--box-shadow--left);
+  transition: var(--transition);
+  transition-duration: var(--transition--duration--long);
+  transform: translateX($width);
+  opacity: 0;
+}
+
+.header {
+  flex: 0 0 auto;
+  position: relative;
+  padding: var(--spacing--l);
+}
+
+.title {
+  padding-right: calc(var(--square-button-size) + var(--spacing--s));
+  font-size: var(--font--size--h1);
+  font-weight: 300;
+}
+
+.closeButton {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  z-index: $z-index + 1;
+  margin: var(--spacing--l);
+}
+
+.content {
+  flex: 1;
+  position: relative;
+  padding: var(--spacing--l);
+  padding-top: 0;
+  overflow: auto;
+}

@@ -1,0 +1,61 @@
+.goBack {
+  color: #DC143C;
+}
+
+.swordsCrossed {
+  color: #C0C0C0;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.buttonLabel {
+  text-align: center;
+}
+
+.table {
+  border-spacing: 10px;
+}
+
+.friend {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.letterBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #669933;
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.letter {
+  color: #FFFFFF;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+}

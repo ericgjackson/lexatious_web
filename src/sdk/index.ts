@@ -1,0 +1,11 @@
+export { default as concede } from './concede';
+export { default as exchange } from './exchange';
+export { default as getAchievements } from './getAchievements';
+export { default as getFriends } from './getFriends';
+export { default as getState } from './getState';
+export { default as getStats } from './getStats';
+export { default as getUpdate } from './getUpdate';
+export { default as getUserData } from './getUserData';
+export { default as newGame } from './newGame';
+export { default as play } from './play';
+export { default as register } from './register';

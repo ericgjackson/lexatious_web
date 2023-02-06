@@ -1,0 +1,15 @@
+@import 'styles/mixins';
+
+.messageContainer {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  min-height: 40px;
+
+  @include tablet {
+    margin: var(--spacing--l);
+  }
+}

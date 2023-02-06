@@ -1,0 +1,11 @@
+.section {
+  & + & {
+    margin-top: var(--spacing--xl);
+  }
+}
+
+.heading {
+  margin-bottom: var(--spacing--m);
+  font-size: var(--font--size--h2);
+  font-weight: 300;
+}

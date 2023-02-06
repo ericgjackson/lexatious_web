@@ -1,0 +1,37 @@
+.gameButtons {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  margin-right: calc(var(--spacing--l) - 2 * var(--spacing--xs));
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.error {
+  &,
+  &:active,
+  &:focus,
+  &:hover {
+    color: var(--color--error);
+  }
+}
+
+.green {
+  color: #4CAF50;
+}
+
+.blue {
+  color: #1E90FF;
+}
+
+.red {
+  color: red;
+}
+
+.pencilEraser {
+  color: #DBB7BB;
+}

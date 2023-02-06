@@ -1,0 +1,30 @@
+@import 'styles/mixins';
+
+.competitorsOuterContainer {
+  position: relative;
+  z-index: 1;
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 5px;
+  min-height: 40px;
+
+  @include tablet {
+    margin: var(--spacing--l);
+  }
+}
+
+.competitorsInnerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.competitor0Container {
+  color: var(--color--p0tile);
+}
+
+.competitor1Container {
+  color: var(--color--p1tile);
+}
