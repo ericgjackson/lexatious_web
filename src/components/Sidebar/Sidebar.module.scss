@@ -56,7 +56,7 @@ $width: 370px;
 }
 
 .title {
-  padding-right: calc(var(--square-button-size) + var(--spacing--s));
+  padding-right: calc(40 + var(--spacing--s));
   font-size: var(--font--size--h1);
   font-weight: 300;
 }

@@ -13,6 +13,7 @@ import Link from './Link';
 import styles from './SquareButton.module.scss';
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  buttonSize: number;
   children?: never;
   Icon: FunctionComponent<SVGAttributes<SVGElement>>;
   style?: CSSProperties;
@@ -21,6 +22,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const SquareButton: FunctionComponent<Props> = ({
+  buttonSize,
   className,
   Icon,
   style,
@@ -28,6 +30,7 @@ const SquareButton: FunctionComponent<Props> = ({
   ...props
 }) => {
   const triggerProps = useTooltip(tooltip, props);
+  const varIconStyle = {height: buttonSize, width: buttonSize};
 
   return (
     <button
@@ -38,7 +41,7 @@ const SquareButton: FunctionComponent<Props> = ({
       {...triggerProps}
     >
       <span className={styles.content}>
-        <Icon className={styles.icon} />
+        <Icon className={styles.icon} style={varIconStyle} />
       </span>
     </button>
   );

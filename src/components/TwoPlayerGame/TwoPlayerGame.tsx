@@ -183,6 +183,7 @@ const TwoPlayerGame: FunctionComponent<Props> = ({ className, isOpen, onClose })
         <div className={styles.buttonsContainer}>
           <div className={styles.buttonContainer}>
             <SquareButton
+              buttonSize={60}
               className={styles.swordsCrossed}
               Icon={SwordsCrossed}
               onClick={handlePlayClick}

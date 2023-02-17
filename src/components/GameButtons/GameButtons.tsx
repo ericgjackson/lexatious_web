@@ -8,6 +8,7 @@ import SquareButton from '../SquareButton';
 import styles from './GameButtons.module.scss';
 
 interface Props {
+  buttonSize: number;
   onClear: () => void;
   onConcede: () => void;
   onExchange: () => void;
@@ -17,6 +18,7 @@ interface Props {
 }
 
 const GameButtons: FunctionComponent<Props> = ({
+  buttonSize,
   onClear,
   onConcede,
   onExchange,
@@ -29,6 +31,7 @@ const GameButtons: FunctionComponent<Props> = ({
   return (
     <div className={styles.gameButtons}>
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={Robot}
         tooltip={translate('common.bot-game')}
@@ -36,6 +39,7 @@ const GameButtons: FunctionComponent<Props> = ({
       />
 
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={TwoPlayer}
         style={{ color: '#4CAF50' }}
@@ -44,6 +48,7 @@ const GameButtons: FunctionComponent<Props> = ({
       />
 
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={Eraser}
         style={{ color: '#DBB7BB' }}
@@ -52,6 +57,7 @@ const GameButtons: FunctionComponent<Props> = ({
       />
 
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={Shuffle}
         style={{ color: '#3B88C3' }}
@@ -60,6 +66,7 @@ const GameButtons: FunctionComponent<Props> = ({
       />
 
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={Exchange}
         style={{ color: '#669933' }}
@@ -68,6 +75,7 @@ const GameButtons: FunctionComponent<Props> = ({
       />
 
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={Concede}
         style={{ color: '#DC143C' }}

@@ -56,6 +56,7 @@ const Help: FunctionComponent<Props> = ({ className, isOpen, onClose }) => {
       <div className={styles.buttonsContainer}>
         <div className={styles.buttonContainer}>
           <SquareButton
+	    buttonSize={60}
             className={styles.register}
             Icon={LeftArrow}
             onClick={handlePrevious}
@@ -65,6 +66,7 @@ const Help: FunctionComponent<Props> = ({ className, isOpen, onClose }) => {
         </div>
         <div className={styles.buttonContainer}>
           <SquareButton
+	    buttonSize={60}
             className={styles.register}
             Icon={RightArrow}
             onClick={handleNext}

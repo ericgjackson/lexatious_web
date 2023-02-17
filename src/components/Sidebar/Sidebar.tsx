@@ -59,6 +59,7 @@ const Sidebar: FunctionComponent<Props> = ({ children, className, isOpen, title,
           <h1 className={styles.title}>{title}</h1>
 
           <SquareButton
+            buttonSize={40}
             className={styles.closeButton}
             Icon={CrossFill}
             tooltip={translate('common.close')}

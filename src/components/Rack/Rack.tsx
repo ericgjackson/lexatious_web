@@ -11,9 +11,10 @@ import RackTile from './RackTile';
 
 interface Props {
   className?: string;
+  tileSize: number;
 }
 
-const Rack: FunctionComponent<Props> = ({ className }) => {
+const Rack: FunctionComponent<Props> = ({ className, tileSize }) => {
   const dispatch = useDispatch();
   const placements = useTypedSelector(selectPlacements);
   const player = useTypedSelector(selectPlayer);
@@ -47,6 +48,7 @@ const Rack: FunctionComponent<Props> = ({ className }) => {
           onClick={onClick}
           player={player}
           selected={rl.selected}
+	  tileSize={tileSize}
           visible={visible[index]}
         />
       ))}

@@ -27,7 +27,7 @@ import {
   WaitingForOpponent,
 } from 'components';
 import { useLocalStorage } from 'hooks';
-import { getCellSize } from 'lib';
+import { getDims } from 'lib';
 import {
   boardSlice,
   concedeSlice,
@@ -70,10 +70,10 @@ const Index: FunctionComponent<Props> = ({ version }) => {
   const [showOnePlayerGame, setShowOnePlayerGame] = useState(false);
   const [showTwoPlayerGame, setShowTwoPlayerGame] = useState(false);
   const [boardRef, { height: boardHeight }] = useMeasure<HTMLDivElement>();
-  const [contentRef, { height: contentHeight, width: contentWidth }] = useMeasure<HTMLDivElement>();
+  const [indexRef, { height: indexHeight, width: indexWidth }] = useMeasure<HTMLDivElement>();
   const config = useTypedSelector(selectConfig);
-  const cellSize = getCellSize(config, contentWidth, contentHeight);
-  const isInitializedInitial = contentWidth > 0 && boardHeight > 0;
+  const {cellSize, rackTileSize, buttonSize} = getDims(config, indexHeight);
+  const isInitializedInitial = boardHeight > 0;
   const [isInitialized, setIsInitialized] = useState(isInitializedInitial);
   const activePlayer = useTypedSelector(selectActivePlayer);
   const opponentName = useTypedSelector(selectOpponentName);
@@ -146,7 +146,7 @@ const Index: FunctionComponent<Props> = ({ version }) => {
 
   return (
     <>
-      <div className={classNames(styles.index, { [styles.initialized]: isInitialized })}>
+      <div className={classNames(styles.index, { [styles.initialized]: isInitialized })} ref={indexRef}>
         <div className={styles.nav}>
           <div className={styles.navLogo}>
             <a className={styles.logoContainer} href="/" title={version}>
@@ -155,6 +155,7 @@ const Index: FunctionComponent<Props> = ({ version }) => {
           </div>
 
           <NavButtons
+            buttonSize={buttonSize}
             onShowAbout={() => setShowAbout(true)}
             onShowAchievements={() => setShowAchievements(true)}
             onShowHelp={() => setShowHelp(true)}
@@ -173,20 +174,21 @@ const Index: FunctionComponent<Props> = ({ version }) => {
         <Message />
 
         <div className={styles.contentWrapper}>
-          <div className={styles.content} ref={contentRef}>
+          <div className={styles.content}>
             <form className={styles.boardContainer} onSubmit={handleSubmit}>
-              {contentWidth > 0 && <Board cellSize={cellSize} innerRef={boardRef} />}
+              {isInitialized && <Board cellSize={cellSize} innerRef={boardRef} />}
               <input className={styles.submitInput} tabIndex={-1} type="submit" />
             </form>
           </div>
         </div>
 
         <div className={styles.rackContainer}>
-          <Rack className={styles.rack} />
+          <Rack className={styles.rack} tileSize={rackTileSize} />
         </div>
 
         <div className={styles.gameButtons}>
           <GameButtons
+            buttonSize={buttonSize}
             onClear={handleClear}
             onConcede={handleConcede}
             onExchange={handleExchange}

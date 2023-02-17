@@ -22,6 +22,7 @@ const Message: FunctionComponent = () => {
   const opponentName = useTypedSelector(selectOpponentName);
   const player = useTypedSelector(selectPlayer);
   const winner = useTypedSelector(selectWinner);
+
   let message = '';
   if (errorMessage) {
     message = errorMessage;

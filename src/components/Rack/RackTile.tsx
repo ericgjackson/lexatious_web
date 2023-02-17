@@ -14,6 +14,7 @@ interface Props {
   onClick: (index: number) => void;
   player: number;
   selected: boolean;
+  tileSize: number;
   visible: boolean;
 }
 
@@ -24,6 +25,7 @@ const RackTile: FunctionComponent<Props> = ({
   onClick,
   player,
   selected,
+  tileSize,
   visible,
 }) => {
   const translate = useTranslate();
@@ -43,7 +45,7 @@ const RackTile: FunctionComponent<Props> = ({
       placeholder={translate('rack.placeholder')[index]}
       raised
       selected={selected}
-      size={TILE_SIZE}
+      size={tileSize}
       tabIndex={index === 0 ? undefined : -1}
       visible={visible}
     />

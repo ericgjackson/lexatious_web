@@ -28,6 +28,7 @@ const BotSetting: FunctionComponent<Props> = ({ className, onClose, opponentGoes
       <div className={styles.botColumn}>
         <div className={styles.botIconContainer}>
           <SquareButton
+	    buttonSize={60}
             className={classNames(styles.button)}
             Icon={Panda}
             onClick={() => {
@@ -37,6 +38,7 @@ const BotSetting: FunctionComponent<Props> = ({ className, onClose, opponentGoes
         </div>
         <div className={styles.botIconContainer}>
           <SquareButton
+	    buttonSize={60}
             className={classNames(styles.button)}
             Icon={Elephant}
             onClick={() => {
@@ -46,6 +48,7 @@ const BotSetting: FunctionComponent<Props> = ({ className, onClose, opponentGoes
         </div>
         <div className={styles.botIconContainer}>
           <SquareButton
+	    buttonSize={60}
             className={classNames(styles.button)}
             Icon={Owl}
             onClick={() => {
@@ -55,6 +58,7 @@ const BotSetting: FunctionComponent<Props> = ({ className, onClose, opponentGoes
         </div>
         <div className={styles.botIconContainer}>
           <SquareButton
+	    buttonSize={60}
             className={classNames(styles.button)}
             Icon={Raven}
             onClick={() => {

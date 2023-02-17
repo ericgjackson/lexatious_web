@@ -8,6 +8,7 @@ import SquareButton from '../SquareButton';
 import styles from './NavButtons.module.scss';
 
 interface Props {
+  buttonSize: number;
   onShowAbout: () => void;
   onShowAchievements: () => void;
   onShowHelp: () => void;
@@ -17,6 +18,7 @@ interface Props {
 }
 
 const NavButtons: FunctionComponent<Props> = ({
+  buttonSize,
   onShowAbout,
   onShowAchievements,
   onShowHelp,
@@ -29,6 +31,7 @@ const NavButtons: FunctionComponent<Props> = ({
   return (
     <div className={styles.navButtons}>
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={Profile}
         style={{ color: '#4CAF50' }}
@@ -37,6 +40,7 @@ const NavButtons: FunctionComponent<Props> = ({
       />
 
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={Statistics}
         tooltip={translate('statistics')}
@@ -44,6 +48,7 @@ const NavButtons: FunctionComponent<Props> = ({
       />
 
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={Trophy}
         tooltip={translate('achievements')}
@@ -51,6 +56,7 @@ const NavButtons: FunctionComponent<Props> = ({
       />
 
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={Keyboard}
         style={{ color: '#A9A9A9' }}
@@ -59,6 +65,7 @@ const NavButtons: FunctionComponent<Props> = ({
       />
 
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={About}
         style={{ color: '#1E90FF' }}
@@ -67,6 +74,7 @@ const NavButtons: FunctionComponent<Props> = ({
       />
 
       <SquareButton
+        buttonSize={buttonSize}
         className={styles.button}
         Icon={Help}
         style={{ color: '#006600' }}

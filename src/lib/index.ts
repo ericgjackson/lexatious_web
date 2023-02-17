@@ -8,7 +8,7 @@ export { default as createNullMovingComparator } from './createNullMovingCompara
 export { default as detectLocale } from './detectLocale';
 export { default as extractInputValue } from './extractInputValue';
 export { default as findCell } from './findCell';
-export { default as getCellSize } from './getCellSize';
+export { default as getDims } from './getDims';
 export { default as getTileSizes } from './getTileSizes';
 export { default as inverseDirection } from './inverseDirection';
 export { default as isCtrl } from './isCtrl';

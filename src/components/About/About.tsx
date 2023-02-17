@@ -24,26 +24,27 @@ const About: FunctionComponent<Props> = ({ className, isOpen, onClose }) => {
           Send questions to&nbsp;
           <a href="mailto:support@lexatious.com" target="_blank" rel="noopener noreferrer">support@lexatious.com</a>.
         </span>
-      </Sidebar.Section>
-      <Sidebar.Section title="Technologies">
-        <ul>
-          <li>React</li>
-          <li>React Redux</li>
-          <li>Redux-Saga</li>
-          <li>Next.js</li>
-          <li>
-            Code draws heavily from
-            <a
-              className={styles.anchor}
-              href="https://github.com/kamilmielnik/scrabble-solver"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Scrabble Solver 2
-            </a>
-            by Kamil Mielnik
-          </li>
-        </ul>
+	<br/><br/>
+	<span>
+	  The user interface and source code for the web front end is based on&nbsp;
+	  <a
+	    className={styles.anchor}
+	    href="https://scrabble-solver.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+	    Scrabble Solver 2
+          </a>
+	  &nbsp;by&nbsp;
+	  <a
+	    className={styles.anchor}
+	    href="https://kamilmielnik.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+	    Kamil Mielnik
+          </a>.
+        </span>
       </Sidebar.Section>
       <Sidebar.Section title="Apps">
         <div className={styles.appLinks}>
@@ -58,6 +59,14 @@ const About: FunctionComponent<Props> = ({ className, isOpen, onClose }) => {
             <PlayStore width={120} />
           </a>
         </div>
+      </Sidebar.Section>
+      <Sidebar.Section title="Technologies">
+        <ul>
+          <li>React</li>
+          <li>React Redux</li>
+          <li>Redux-Saga</li>
+          <li>Next.js</li>
+        </ul>
       </Sidebar.Section>
     </Sidebar>
   );

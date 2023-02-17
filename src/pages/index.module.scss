@@ -23,7 +23,7 @@
   flex: 0 0 auto;
   display: flex;
   align-items: flex-start;
-  padding: var(--spacing--l);
+  padding: var(--spacing--m);
 }
 
 .gameButtons {
@@ -33,7 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: var(--spacing--l);
+  padding: var(--spacing--m);
 }
 
 .navLogo {
@@ -96,11 +96,7 @@
   flex: 0 0 auto;
   display: flex;
   justify-content: center;
-  margin: var(--spacing--xl) var(--spacing--l);
-
-  @include tablet {
-    margin: var(--spacing--l);
-  }
+  margin: var(--spacing--m);
 }
 
 .rack {

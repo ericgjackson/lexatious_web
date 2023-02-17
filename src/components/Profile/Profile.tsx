@@ -78,6 +78,7 @@ const Profile: FunctionComponent<Props> = ({ className, isOpen, onClose }) => {
       <div className={styles.buttonsContainer}>
         <div className={styles.buttonContainer}>
           <SquareButton
+	    buttonSize={60}
             className={styles.register}
             Icon={Register}
             onClick={handleRegister}

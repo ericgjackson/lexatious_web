@@ -1,0 +1,36 @@
+// Return the dimensions for the major elements that can resize depending on the screen size.
+// indexHeight is the height of the screen (it is linked to the height of a div that contains
+// everything).
+//
+// We calculate remHeight by taking indexHeight and subtracting the height of some fixed size
+// elements.  Namely the Message, the Competitors, and some margins/padding.  It is unfortunate
+// that we have these expressed as "magic" constants here.  TODO: fix.  We allocate the
+// remaining height as 70% to the board, 10% to the rack, 10% to the NavButtons and 10% to the
+// GameButtons.
+//
+// It's assumed that the the height is the limiting dimension rather than the width.  This
+// makes sense for devices with landscape orientation like most desktops and laptops.  This
+// doesn't work so well for mobile web, but we currently don't plan to support phones and
+// tablets (in part because they are too small, in part because the web interface assumes
+// keyboard input).  Better to force the user to use the native apps on those devices.
+
+import { Config } from 'ltypes';
+
+interface Dims {
+  cellSize: number;
+  rackTileSize: number;
+  buttonSize: number;
+}
+
+const getDims = (config: Config, indexHeight: number): Dims => {
+  // 46 for the Message and Competitors components.
+  // Font size 16, 1.5x for h2, 1.5x for line height, 2*5 for margin of 5
+  // 10 is the padding inside NavButtons/GameButton/Rack
+  const remHeight = indexHeight - 2 * 46 - 6 * 10;
+  const cellSize = Math.floor(((7.0 * remHeight) / 10.0) / config.boardHeight);
+  const rackTileSize = Math.floor(remHeight / 10.0);
+  const buttonSize = Math.floor(remHeight / 10.0);
+  return {cellSize, rackTileSize, buttonSize};
+};
+
+export default getDims;
