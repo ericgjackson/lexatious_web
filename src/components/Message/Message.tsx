@@ -22,6 +22,8 @@ const Message: FunctionComponent = () => {
   const opponentName = useTypedSelector(selectOpponentName);
   const player = useTypedSelector(selectPlayer);
   const winner = useTypedSelector(selectWinner);
+  // 16px font * 1.5 for h2 * 1.5 for line height
+  const varStyle = {minHeight: 36};
 
   let message = '';
   if (errorMessage) {
@@ -57,7 +59,7 @@ const Message: FunctionComponent = () => {
   }
 
   return (
-    <div className={styles.messageContainer}>
+    <div className={styles.messageContainer} style={varStyle}>
       <h2>{message}</h2>
     </div>
   );

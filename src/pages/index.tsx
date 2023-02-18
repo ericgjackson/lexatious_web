@@ -72,7 +72,7 @@ const Index: FunctionComponent<Props> = ({ version }) => {
   const [boardRef, { height: boardHeight }] = useMeasure<HTMLDivElement>();
   const [indexRef, { height: indexHeight, width: indexWidth }] = useMeasure<HTMLDivElement>();
   const config = useTypedSelector(selectConfig);
-  const {cellSize, rackTileSize, buttonSize} = getDims(config, indexHeight);
+  const {cellSize, rackTileSize, buttonSize} = getDims(config, indexHeight, indexWidth);
   const isInitializedInitial = boardHeight > 0;
   const [isInitialized, setIsInitialized] = useState(isInitializedInitial);
   const activePlayer = useTypedSelector(selectActivePlayer);
