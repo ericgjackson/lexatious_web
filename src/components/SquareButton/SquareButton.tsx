@@ -30,7 +30,7 @@ const SquareButton: FunctionComponent<Props> = ({
   ...props
 }) => {
   const triggerProps = useTooltip(tooltip, props);
-  const varIconStyle = {height: buttonSize, width: buttonSize};
+  const varIconStyle = { height: buttonSize, width: buttonSize };
 
   return (
     <button

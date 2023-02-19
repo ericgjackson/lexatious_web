@@ -1,0 +1,9 @@
+.cell {
+  position: relative;
+  display: table-cell;
+  background-color: white;
+  border-right: var(--border);
+  border-bottom: var(--border);
+  transition: var(--transition);
+  background-clip: padding-box;
+}

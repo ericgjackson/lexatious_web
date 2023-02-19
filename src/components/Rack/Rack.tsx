@@ -48,7 +48,7 @@ const Rack: FunctionComponent<Props> = ({ className, tileSize }) => {
           onClick={onClick}
           player={player}
           selected={rl.selected}
-	  tileSize={tileSize}
+          tileSize={tileSize}
           visible={visible[index]}
         />
       ))}

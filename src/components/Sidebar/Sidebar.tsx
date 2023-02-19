@@ -18,11 +18,14 @@ export interface Props {
   isOpen: boolean;
   title: string;
   onClose: () => void;
+  width?: number;
 }
 
-const Sidebar: FunctionComponent<Props> = ({ children, className, isOpen, title, onClose }) => {
+const Sidebar: FunctionComponent<Props> = ({ children, className, isOpen, title, onClose, width }) => {
   const translate = useTranslate();
   const [shouldReturnFocusAfterClose, setShouldReturnFocusAfterClose] = useState(true);
+  const actualWidth = width || 370;
+  const varStyle = { width: `${actualWidth}px` };
 
   useKey(
     'Escape',
@@ -54,7 +57,7 @@ const Sidebar: FunctionComponent<Props> = ({ children, className, isOpen, title,
       shouldReturnFocusAfterClose={shouldReturnFocusAfterClose}
       onRequestClose={onClose}
     >
-      <div className={classNames(styles.sidebar, className)}>
+      <div className={classNames(styles.sidebar, className)} style={varStyle}>
         <div className={styles.header}>
           <h1 className={styles.title}>{title}</h1>
 

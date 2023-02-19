@@ -59,7 +59,7 @@ const NavButtons: FunctionComponent<Props> = ({
         buttonSize={buttonSize}
         className={styles.button}
         Icon={Keyboard}
-        style={{ color: '#A9A9A9' }}
+        style={{ color: '#36454F' }}
         tooltip={translate('keyMap')}
         onClick={onShowKeyMap}
       />

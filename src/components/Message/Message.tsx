@@ -23,7 +23,7 @@ const Message: FunctionComponent = () => {
   const player = useTypedSelector(selectPlayer);
   const winner = useTypedSelector(selectWinner);
   // 16px font * 1.5 for h2 * 1.5 for line height
-  const varStyle = {minHeight: 36};
+  const varStyle = { minHeight: 36 };
 
   let message = '';
   if (errorMessage) {

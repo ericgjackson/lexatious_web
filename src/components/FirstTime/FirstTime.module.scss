@@ -1,11 +1,10 @@
 @import 'styles/mixins';
 
-.goBack {
-  color: #DC143C;
-}
-
-.register {
-  color: #C0C0C0;
+.boardContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttonsContainer {
@@ -28,16 +27,12 @@
 
 .buttonLabel {
   text-align: center;
+  font-size: 18px;
   @include no-select;
 }
 
-.form {
-  display: flex;      
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.message {
-  margin-top: 20px;
+.text {
+  margin-top: 50px;
   min-height: 32px;
+  font-size: 18px;
 }

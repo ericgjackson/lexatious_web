@@ -12,6 +12,7 @@ import {
   Achievements,
   Board,
   Competitors,
+  FirstTime,
   GameButtons,
   Help,
   KeyMap,
@@ -63,6 +64,7 @@ const Index: FunctionComponent<Props> = ({ version }) => {
   const dispatch = useDispatch();
   const [showAbout, setShowAbout] = useState(false);
   const [showAchievements, setShowAchievements] = useState(false);
+  const [showFirstTime, setShowFirstTime] = useState(false);
   const [showHelp, setShowHelp] = useState(false);
   const [showKeyMap, setShowKeyMap] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
@@ -72,7 +74,7 @@ const Index: FunctionComponent<Props> = ({ version }) => {
   const [boardRef, { height: boardHeight }] = useMeasure<HTMLDivElement>();
   const [indexRef, { height: indexHeight, width: indexWidth }] = useMeasure<HTMLDivElement>();
   const config = useTypedSelector(selectConfig);
-  const {cellSize, rackTileSize, buttonSize} = getDims(config, indexHeight, indexWidth);
+  const { cellSize, rackTileSize, buttonSize } = getDims(config, indexHeight, indexWidth);
   const isInitializedInitial = boardHeight > 0;
   const [isInitialized, setIsInitialized] = useState(isInitializedInitial);
   const activePlayer = useTypedSelector(selectActivePlayer);
@@ -129,7 +131,7 @@ const Index: FunctionComponent<Props> = ({ version }) => {
 
   const handleSplashAnimationEnd = (event: AnimationEvent<HTMLDivElement>) => {
     if (event.target === event.currentTarget && !localStorage.getHasVisited()) {
-      // Offer tutorial here
+      setShowFirstTime(true);
       localStorage.setHasVisited(true);
     }
   };
@@ -203,6 +205,8 @@ const Index: FunctionComponent<Props> = ({ version }) => {
       <About isOpen={showAbout} onClose={() => setShowAbout(false)} />
 
       <Achievements isOpen={showAchievements} onClose={() => setShowAchievements(false)} />
+
+      <FirstTime isOpen={showFirstTime} onClose={() => setShowFirstTime(false)} setShowHelp={setShowHelp} />
 
       <Help isOpen={showHelp} onClose={() => setShowHelp(false)} />
 

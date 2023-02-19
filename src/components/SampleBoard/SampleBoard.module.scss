@@ -1,0 +1,10 @@
+.board {
+  display: table;
+  box-shadow: var(--box-shadow);
+  border-top: var(--border);
+  border-left: var(--border);
+}
+
+.row {
+  display: table-row;
+}

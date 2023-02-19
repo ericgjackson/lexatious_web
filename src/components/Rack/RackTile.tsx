@@ -1,6 +1,5 @@
 import { FunctionComponent, RefObject, useCallback } from 'react';
 
-import { TILE_SIZE } from 'parameters';
 import { useTranslate } from 'state';
 
 import Tile from '../Tile';

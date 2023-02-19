@@ -1,3 +1,5 @@
+@import 'styles/mixins';
+
 .goBack {
   color: #DC143C;
 }
@@ -26,6 +28,7 @@
 
 .buttonLabel {
   text-align: center;
+  @include no-select;
 }
 
 .table {

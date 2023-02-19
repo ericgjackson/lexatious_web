@@ -24,25 +24,26 @@ const About: FunctionComponent<Props> = ({ className, isOpen, onClose }) => {
           Send questions to&nbsp;
           <a href="mailto:support@lexatious.com" target="_blank" rel="noopener noreferrer">support@lexatious.com</a>.
         </span>
-	<br/><br/>
-	<span>
-	  The user interface and source code for the web front end is based on&nbsp;
-	  <a
-	    className={styles.anchor}
-	    href="https://scrabble-solver.org"
+        <br />
+        <br />
+        <span>
+          The user interface and source code for the web front end is based on&nbsp;
+          <a
+            className={styles.anchor}
+            href="https://scrabble-solver.org"
             target="_blank"
             rel="noopener noreferrer"
           >
-	    Scrabble Solver 2
+            Scrabble Solver 2
           </a>
-	  &nbsp;by&nbsp;
-	  <a
-	    className={styles.anchor}
-	    href="https://kamilmielnik.com"
+          &nbsp;by&nbsp;
+          <a
+            className={styles.anchor}
+            href="https://kamilmielnik.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-	    Kamil Mielnik
+            Kamil Mielnik
           </a>.
         </span>
       </Sidebar.Section>

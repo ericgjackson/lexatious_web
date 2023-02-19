@@ -39,7 +39,7 @@ const getDims = (config: Config, indexHeight: number, indexWidth: number): Dims 
   const remHeight2 = remHeight - 2 * buttonSize;
   const cellSize = Math.floor(((9.0 * remHeight2) / 10.0) / config.boardHeight);
   const rackTileSize = Math.floor(remHeight2 / 10.0);
-  return {cellSize, rackTileSize, buttonSize};
+  return { cellSize, rackTileSize, buttonSize };
 };
 
 export default getDims;

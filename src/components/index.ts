@@ -5,7 +5,7 @@ export { default as Board } from './Board';
 export { default as Button } from './Button';
 export { default as Checkbox } from './Checkbox';
 export { default as Competitors } from './Competitors';
-export { default as EmptyState } from './EmptyState';
+export { default as FirstTime } from './FirstTime';
 export { default as GameButtons } from './GameButtons';
 export { default as Help } from './Help';
 export { default as Key } from './Key';
