@@ -15,7 +15,7 @@ interface Props {
   className?: string;
   isOpen: boolean;
   onClose: () => void;
-  setShowHelp: () => void;
+  setShowHelp: (val: boolean) => void;
 }
 
 const letters = [

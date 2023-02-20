@@ -35,6 +35,7 @@ const CellPure: FunctionComponent<Props> = ({
       character={isEmpty ? undefined : tile.character}
       occupier={isEmpty ? 0 : tile.occupier}
       raised={!isEmpty}
+      recentlyChanged={false}
       size={size}
     />
   </div>
