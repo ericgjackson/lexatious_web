@@ -1,6 +1,6 @@
 @import 'styles/mixins';
 
-.boardContainer {
+.boardAndTextContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +12,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .buttonContainer {
@@ -32,7 +32,6 @@
 }
 
 .text {
-  margin-top: 20px;
   min-height: 32px;
   font-size: 18px;
 }

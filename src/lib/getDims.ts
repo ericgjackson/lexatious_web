@@ -28,13 +28,14 @@ interface Dims {
   buttonSize: number;
 }
 
-const getDims = (config: Config, indexHeight: number, indexWidth: number): Dims => {
+const getDims = (config: Config, screenHeight: number, screenWidth: number): Dims => {
   // 46 for the Message and Competitors components.
   // Font size 16, 1.5x for h2, 1.5x for line height, 2*5 for margin of 5
   // 10 is the padding inside NavButtons/GameButton/Rack
-  const remHeight = indexHeight - 2 * 46 - 6 * 10;
+  // 20 for a little margin at the top and bottom
+  const remHeight = screenHeight - 2 * 46 - 6 * 10 - 20;
   const buttonSize1 = Math.floor(remHeight / 10.0);
-  const buttonSize2 = Math.floor(indexWidth / 3.0 / 6.0);
+  const buttonSize2 = Math.floor(screenWidth / 3.0 / 6.0);
   const buttonSize = Math.min(Math.min(buttonSize1, buttonSize2), 100);
   const remHeight2 = remHeight - 2 * buttonSize;
   const cellSize = Math.floor(((9.0 * remHeight2) / 10.0) / config.boardHeight);

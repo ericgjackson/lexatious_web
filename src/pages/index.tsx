@@ -72,9 +72,9 @@ const Index: FunctionComponent<Props> = ({ version }) => {
   const [showOnePlayerGame, setShowOnePlayerGame] = useState(false);
   const [showTwoPlayerGame, setShowTwoPlayerGame] = useState(false);
   const [boardRef, { height: boardHeight }] = useMeasure<HTMLDivElement>();
-  const [indexRef, { height: indexHeight, width: indexWidth }] = useMeasure<HTMLDivElement>();
+  const [indexRef, { height: screenHeight, width: screenWidth }] = useMeasure<HTMLDivElement>();
   const config = useTypedSelector(selectConfig);
-  const { cellSize, rackTileSize, buttonSize } = getDims(config, indexHeight, indexWidth);
+  const { cellSize, rackTileSize, buttonSize } = getDims(config, screenHeight, screenWidth);
   const isInitializedInitial = boardHeight > 0;
   const [isInitialized, setIsInitialized] = useState(isInitializedInitial);
   const activePlayer = useTypedSelector(selectActivePlayer);
@@ -206,9 +206,9 @@ const Index: FunctionComponent<Props> = ({ version }) => {
 
       <Achievements isOpen={showAchievements} onClose={() => setShowAchievements(false)} />
 
-      <FirstTime isOpen={showFirstTime} onClose={() => setShowFirstTime(false)} setShowHelp={setShowHelp} />
+      <FirstTime isOpen={showFirstTime} onClose={() => setShowFirstTime(false)} screenHeight={screenHeight} setShowHelp={setShowHelp} />
 
-      <Help isOpen={showHelp} onClose={() => setShowHelp(false)} />
+      <Help isOpen={showHelp} onClose={() => setShowHelp(false)} screenHeight={screenHeight} />
 
       <KeyMap isOpen={showKeyMap} onClose={() => setShowKeyMap(false)} />
 

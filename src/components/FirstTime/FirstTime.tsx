@@ -15,6 +15,7 @@ interface Props {
   className?: string;
   isOpen: boolean;
   onClose: () => void;
+  screenHeight: number;
   setShowHelp: (val: boolean) => void;
 }
 
@@ -44,8 +45,19 @@ const occupiers = [
   0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ];
 
-const FirstTime: FunctionComponent<Props> = ({ className, isOpen, onClose, setShowHelp }) => {
+const FirstTime: FunctionComponent<Props> = ({ className, isOpen, onClose, screenHeight, setShowHelp }) => {
   const translate = useTranslate();
+
+  // 85 for modal header
+  // 54 for text
+  // 50 for top margin on text
+  // 11 for cell borders
+  // 87 for buttons
+  // 50 for top margin on buttons
+  // 20 for bottom padding on Sidebar content
+  const fixedHeight = 85 + 54 + 50 + 11 + 87 + 50 + 20;
+  const remHeight = screenHeight - fixedHeight;
+  const cellSize = Math.min(Math.floor(remHeight / 10), 60);
 
   const handleTutorial = () => {
     onClose();
@@ -57,7 +69,7 @@ const FirstTime: FunctionComponent<Props> = ({ className, isOpen, onClose, setSh
       <Sidebar.Section title="">
         <div className={styles.boardContainer}>
           <SampleBoard
-            cellSize={60}
+            cellSize={cellSize}
             height={10}
             width={10}
             letters={letters}
@@ -67,27 +79,27 @@ const FirstTime: FunctionComponent<Props> = ({ className, isOpen, onClose, setSh
         <div className={styles.text}>
           <span>It looks like you're new around here.  Would you like to learn how to play Lexatious?</span>
         </div>
-      </Sidebar.Section>
-      <div className={styles.buttonsContainer}>
-        <div className={styles.buttonContainer}>
-          <SquareButton
-            buttonSize={60}
-            Icon={Help}
-            onClick={handleTutorial}
-            style={{ color: '#006600' }}
-          />
-          <span className={styles.buttonLabel}>Yes!</span>
-        </div>
-        <div className={styles.buttonContainer}>
-          <SquareButton
-            buttonSize={60}
-            Icon={GoBack}
-            onClick={onClose}
-            style={{ color: '#DC143C' }}
-          />
-          <span className={styles.buttonLabel}>No</span>
-        </div>
+        <div className={styles.buttonsContainer}>
+          <div className={styles.buttonContainer}>
+            <SquareButton
+              buttonSize={60}
+              Icon={Help}
+              onClick={handleTutorial}
+              style={{ color: '#006600' }}
+            />
+            <span className={styles.buttonLabel}>Yes!</span>
+          </div>
+          <div className={styles.buttonContainer}>
+            <SquareButton
+              buttonSize={60}
+              Icon={GoBack}
+              onClick={onClose}
+              style={{ color: '#DC143C' }}
+            />
+            <span className={styles.buttonLabel}>No</span>
+          </div>
       </div>
+      </Sidebar.Section>
     </Sidebar>
   );
 };

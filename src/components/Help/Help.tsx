@@ -16,6 +16,7 @@ interface Props {
   className?: string;
   isOpen: boolean;
   onClose: () => void;
+  screenHeight: number;
 }
 
 const numScreens = 8;
@@ -338,9 +339,20 @@ const instructions = [
   instructions7,
 ];
 
-const Help: FunctionComponent<Props> = ({ className, isOpen, onClose }) => {
+const Help: FunctionComponent<Props> = ({ className, isOpen, onClose, screenHeight }) => {
   const translate = useTranslate();
   const [screen, setScreen] = useState<number>(0);
+  // 85 for modal header
+  // 225 for text (empirically this is enough)
+  // 11 for cell borders
+  // 87 for buttons
+  // 40 for top margin on buttons
+  // 20 for bottom padding on Sidebar content
+  const fixedHeight = 85 + 225 + 11 + 87 + 40 + 20;
+  const remHeight = screenHeight - fixedHeight;
+  const cellSize = Math.max(Math.min(Math.floor(remHeight / 10), 60), 24);
+  const previousColor = screen > 0 ? '#006600' : '#D3D3D3';
+  const nextColor = screen < numScreens - 1 ? '#006600' : '#D3D3D3';
 
   const handlePrevious = () => {
     if (screen > 0) {
@@ -356,9 +368,9 @@ const Help: FunctionComponent<Props> = ({ className, isOpen, onClose }) => {
 
   const screenContent = useCallback(() => {
     return (
-      <div className={styles.boardContainer}>
+      <div className={styles.boardAndTextContainer}>
         <SampleBoard
-          cellSize={60}
+          cellSize={cellSize}
           height={10}
           width={10}
           letters={letters[screen]}
@@ -384,7 +396,7 @@ const Help: FunctionComponent<Props> = ({ className, isOpen, onClose }) => {
             buttonSize={60}
             Icon={LeftArrow}
             onClick={handlePrevious}
-            style={{ color: '#006600' }}
+            style={{ color: previousColor }}
           />
           <span className={styles.buttonLabel}>Previous</span>
         </div>
@@ -393,7 +405,7 @@ const Help: FunctionComponent<Props> = ({ className, isOpen, onClose }) => {
             buttonSize={60}
             Icon={RightArrow}
             onClick={handleNext}
-            style={{ color: '#006600' }}
+            style={{ color: nextColor }}
           />
           <span className={styles.buttonLabel}>Next</span>
         </div>
