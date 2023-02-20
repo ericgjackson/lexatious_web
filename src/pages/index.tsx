@@ -206,7 +206,12 @@ const Index: FunctionComponent<Props> = ({ version }) => {
 
       <Achievements isOpen={showAchievements} onClose={() => setShowAchievements(false)} />
 
-      <FirstTime isOpen={showFirstTime} onClose={() => setShowFirstTime(false)} screenHeight={screenHeight} setShowHelp={setShowHelp} />
+      <FirstTime
+        isOpen={showFirstTime}
+        onClose={() => setShowFirstTime(false)}
+        screenHeight={screenHeight}
+        setShowHelp={setShowHelp}
+      />
 
       <Help isOpen={showHelp} onClose={() => setShowHelp(false)} screenHeight={screenHeight} />
 

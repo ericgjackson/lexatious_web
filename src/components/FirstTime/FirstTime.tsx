@@ -98,7 +98,7 @@ const FirstTime: FunctionComponent<Props> = ({ className, isOpen, onClose, scree
             />
             <span className={styles.buttonLabel}>No</span>
           </div>
-      </div>
+        </div>
       </Sidebar.Section>
     </Sidebar>
   );
