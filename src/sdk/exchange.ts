@@ -15,7 +15,7 @@ interface Response {
 }
 
 const exchange = async ({ expectedSequenceIndex, gameToken, letters, player }: Payload): Promise<Response> => {
-  return fetchJson<Response>('http://localhost/wordhex/api/exchange', {
+  return fetchJson<Response>('/api/exchange', {
     method: 'POST',
     /* eslint-disable-next-line camelcase */
     body: JSON.stringify({

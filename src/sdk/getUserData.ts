@@ -20,7 +20,7 @@ interface Response {
 }
 
 const getUserData = async ({ deviceID, username }: Payload): Promise<Response> => {
-  return fetchJson<Response>('http://localhost/wordhex/api/get_user_data', {
+  return fetchJson<Response>('/api/get_user_data', {
     method: 'POST',
     body: JSON.stringify({
       /* eslint-disable-next-line camelcase */

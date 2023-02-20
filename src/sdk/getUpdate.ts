@@ -16,7 +16,7 @@ interface Response {
 }
 
 const getUpdate = async ({ gameToken, player }: Payload): Promise<Response> => {
-  return fetchJson<Response>('http://localhost/wordhex/api/get_update', {
+  return fetchJson<Response>('/api/get_update', {
     method: 'POST',
     body: JSON.stringify({
       /* eslint-disable-next-line camelcase */

@@ -6,7 +6,7 @@ interface Payload {
 }
 
 const register = async ({ deviceID, username }: Payload): Promise<Response> => {
-  return fetchJson<Response>('http://localhost/wordhex/api/register', {
+  return fetchJson<Response>('/api/register', {
     method: 'POST',
     /* eslint-disable-next-line camelcase */
     body: JSON.stringify({ device_id: deviceID, username }),

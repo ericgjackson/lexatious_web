@@ -20,7 +20,7 @@ interface Response {
 }
 
 const play = async ({ changes, draw, expectedSequenceIndex, gameToken, player }: Payload): Promise<Response> => {
-  return fetchJson<Response>('http://localhost/wordhex/api/play', {
+  return fetchJson<Response>('/api/play', {
     method: 'POST',
     body: JSON.stringify({
       changes,

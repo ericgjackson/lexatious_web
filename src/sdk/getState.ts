@@ -31,7 +31,7 @@ const getState = async ({ deviceID, gameToken, username }: Payload): Promise<Res
   if (username) {
     body.username = username;
   }
-  return fetchJson<Response>('http://localhost/wordhex/api/get_state', {
+  return fetchJson<Response>('/api/get_state', {
     method: 'POST',
     body: JSON.stringify(body),
   });

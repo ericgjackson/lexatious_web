@@ -15,7 +15,7 @@ interface Response {
 }
 
 const getAchievements = async ({ deviceID }: Payload): Promise<Response> => {
-  return fetchJson<Response>('http://localhost/wordhex/api/get_achievements', {
+  return fetchJson<Response>('/api/get_achievements', {
     method: 'POST',
     /* eslint-disable-next-line camelcase */
     body: JSON.stringify({ device_id: deviceID }),

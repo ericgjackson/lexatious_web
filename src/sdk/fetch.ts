@@ -1,10 +1,16 @@
 import { isError } from 'ltypes';
 
 const fetch = async (input: RequestInfo | URL, init?: RequestInit): Promise<Response> => {
+  let fullyQualifiedURL;
+  if (process.env.NODE_ENV === 'production') {
+    fullyQualifiedURL = 'https://lexatious.com/wordhex' + input;
+  } else {
+    fullyQualifiedURL = 'http://localhost/wordhex' + input;
+  }
   let response: Response;
 
   try {
-    response = await window.fetch(input, init);
+    response = await window.fetch(fullyQualifiedURL, init);
   } catch (error) {
     throw new Error(`Network error: check your internet connection`);
   }

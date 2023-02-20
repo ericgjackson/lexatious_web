@@ -31,7 +31,7 @@ const newGame = async ({ deviceID, opponentGoesFirst, opponentName, username }: 
   if (username) {
     body.username = username;
   }
-  return fetchJson<Response>('http://localhost/wordhex/api/new_game', {
+  return fetchJson<Response>('/api/new_game', {
     method: 'POST',
     body: JSON.stringify(body),
   });

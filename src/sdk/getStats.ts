@@ -15,7 +15,7 @@ interface Response {
 }
 
 const getStats = async ({ deviceID }: Payload): Promise<Response> => {
-  return fetchJson<Response>('http://localhost/wordhex/api/get_stats', {
+  return fetchJson<Response>('/api/get_stats', {
     method: 'POST',
     /* eslint-disable-next-line camelcase */
     body: JSON.stringify({ device_id: deviceID }),

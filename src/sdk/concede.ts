@@ -11,7 +11,7 @@ interface Response {
 }
 
 const concede = async ({ expectedSequenceIndex, gameToken, player }: Payload): Promise<Response> => {
-  return fetchJson<Response>('http://localhost/wordhex/api/concede', {
+  return fetchJson<Response>('/api/concede', {
     method: 'POST',
     /* eslint-disable-next-line camelcase */
     body: JSON.stringify({
