@@ -1,7 +1,7 @@
 # lexatious_web
 
 <div align="center">
-<img alt="Lexatious logo" height="60" src="https://raw.githubusercontent.com/ericgjackson/lexatious_web/main/imgs/logo.png" />
+<img alt="Lexatious logo" height="80" src="https://raw.githubusercontent.com/ericgjackson/lexatious_web/main/imgs/logo.png" />
 </div>
 
 Lexatious is a novel word game, somewhat similar to Scrabble.  This repo implements the web
@@ -21,6 +21,10 @@ Apps are also available for Android and iOS:
 ## Develop
 
 You need Node.js 16 or later.
+
+### Back End
+
+The back end for Lexatious is not currently open source which makes it tricky for anyone other than the author to do development.  It may work to edit `src/sdk/fetch.ts` to ensure that backend calls are sent to the production server at lexatious.com.
 
 ### Setup
 
