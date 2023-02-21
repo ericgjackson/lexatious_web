@@ -18,6 +18,39 @@ Apps are also available for Android and iOS:
 <img alt="Play Store" height="60" src="https://github.com/ericgjackson/lexatious_web/blob/main/src/icons/PlayStore.svg"/>
 </a>
 
+## Develop
+
+You need Node.js 16 or later.
+
+### Setup
+
+```
+npm install
+```
+
+### Dev Server
+
+```
+npm run dev
+```
+
+Runs a dev system with hot reloading.  Accessible at localhost:3000.
+
+### Linting
+
+```
+npm run lint
+```
+
+### Building
+
+```
+npm run build
+npm run export
+```
+
+Output is to the "out" directory.
+
 ## Acknowledgments
 
 The user interface and source code for the web front end is based on&nbsp;
