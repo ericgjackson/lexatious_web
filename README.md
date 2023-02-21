@@ -1,19 +1,20 @@
 # lexatious_web
 
-![](https://github.com/ericgjackson/lexatious_web/blob/main/imgs/logo.png?raw=true)
+<div align="center">
+<img alt="Lexatious logo" height="60" src="https://raw.githubusercontent.com/ericgjackson/lexatious_web/main/imgs/logo.png" />
+</div>
 
 Lexatious is a novel word game, somewhat similar to Scrabble.  This repo implements the web
 front end to Lexatious.  Visit
-<a href="https://lexatious.com" target="_blank" rel="noopener noreferrer">lexatious.com</a> to
-play Lexatious in your browser.
+<a href="https://lexatious.com">lexatious.com</a> to play Lexatious in your browser.
 
 Apps are also available for Android and iOS:
 
-<a href="https://apps.apple.com/us/app/lexatious/id1614332855" target="_blank" rel="noopener noreferrer">
+<a href="https://apps.apple.com/us/app/lexatious/id1614332855">
 <img alt="App Store" height="60" src="https://github.com/ericgjackson/lexatious_web/blob/main/src/icons/AppStore.svg"/>
 </a>
 
-<a href="https://play.google.com/store/apps/details?id=com.egjackson.lexatious" target="_blank" rel="noopener noreferrer">
+<a href="https://play.google.com/store/apps/details?id=com.egjackson.lexatious">
 <img alt="Play Store" height="60" src="https://github.com/ericgjackson/lexatious_web/blob/main/src/icons/PlayStore.svg"/>
 </a>
 
