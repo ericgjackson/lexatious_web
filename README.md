@@ -10,11 +10,11 @@ play Lexatious in your browser.
 Apps are also available for Android and iOS:
 
 <a href="https://apps.apple.com/us/app/lexatious/id1614332855" target="_blank" rel="noopener noreferrer">
-<img alt="App Store" height="120" src="https://github.com/ericgjackson/lexatious_web/blob/main/src/icons/AppStore.svg/>
+<img alt="App Store" height="60" src="https://github.com/ericgjackson/lexatious_web/blob/main/src/icons/AppStore.svg"/>
 </a>
 
 <a href="https://play.google.com/store/apps/details?id=com.egjackson.lexatious" target="_blank" rel="noopener noreferrer">
-<img alt="Play Store" height="120" src="https://github.com/ericgjackson/lexatious_web/blob/main/src/icons/PlayStore.svg/>
+<img alt="Play Store" height="60" src="https://github.com/ericgjackson/lexatious_web/blob/main/src/icons/PlayStore.svg"/>
 </a>
 
 ## Acknowledgments
