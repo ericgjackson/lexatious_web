@@ -4,9 +4,8 @@
 <img alt="Lexatious logo" height="80" src="https://raw.githubusercontent.com/ericgjackson/lexatious_web/main/imgs/logo.png" />
 </div>
 
-Lexatious is a novel word game, somewhat similar to Scrabble.  This repo implements the web
-front end to Lexatious.  Visit
-<a href="https://lexatious.com">lexatious.com</a> to play Lexatious in your browser.
+Lexatious is a novel word game, created by Eric Jackson, somewhat similar to Scrabble.  This repo contains the web
+front end.  Visit <a href="https://lexatious.com">lexatious.com</a> to play Lexatious in your browser.
 
 Apps are also available for Android and iOS:
 
@@ -55,9 +54,16 @@ npm run export
 
 Output is to the "out" directory.
 
+## Technologies
+
+- React
+- React Redux
+- Redux-Saga
+- Next.js
+
 ## Acknowledgments
 
-The user interface and source code for the web front end is based on&nbsp;
+The user interface and source code for the web front end is based on
 <a href="https://scrabble-solver.org" target="_blank" rel="noopener noreferrer">
-Scrabble Solver 2</a>&nbsp;by&nbsp;
+Scrabble Solver 2</a> by
 <a href="https://kamilmielnik.com" target="_blank" rel="noopener noreferrer">Kamil Mielnik</a>.
