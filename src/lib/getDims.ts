@@ -24,6 +24,7 @@ import { Config } from 'ltypes';
 
 interface Dims {
   cellSize: number;
+  messageHeight: number;
   rackTileSize: number;
   buttonSize: number;
 }
@@ -34,13 +35,14 @@ const getDims = (config: Config, screenHeight: number, screenWidth: number): Dim
   // 10 is the padding inside NavButtons/GameButton/Rack
   // 20 for a little margin at the top and bottom
   const remHeight = screenHeight - 2 * 46 - 6 * 10 - 20;
-  const buttonSize1 = Math.floor(remHeight / 10.0);
+  const buttonSize1 = Math.floor(remHeight / 12.0);
   const buttonSize2 = Math.floor(screenWidth / 3.0 / 6.0);
-  const buttonSize = Math.min(Math.min(buttonSize1, buttonSize2), 100);
+  const buttonSize = Math.min(Math.min(buttonSize1, buttonSize2), 90);
   const remHeight2 = remHeight - 2 * buttonSize;
   const cellSize = Math.floor(((9.0 * remHeight2) / 10.0) / config.boardHeight);
   const rackTileSize = Math.floor(remHeight2 / 10.0);
-  return { cellSize, rackTileSize, buttonSize };
+  const messageHeight = screenHeight >= 1000 ? 36 : 24;
+  return { cellSize, messageHeight, rackTileSize, buttonSize };
 };
 
 export default getDims;

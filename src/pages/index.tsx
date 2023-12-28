@@ -1,8 +1,8 @@
-/* eslint-disable max-lines */
+/* eslint-disable max-lines,no-console,prefer-template */
 import classNames from 'classnames';
 import fs from 'fs';
 import path from 'path';
-import { AnimationEvent, FormEvent, FunctionComponent, useState } from 'react';
+import { AnimationEvent, FormEvent, FunctionComponent, useEffect, useState } from 'react';
 import Modal from 'react-modal';
 import { useDispatch } from 'react-redux';
 import { useEffectOnce, useMeasure } from 'react-use';
@@ -74,7 +74,8 @@ const Index: FunctionComponent<Props> = ({ version }) => {
   const [boardRef, { height: boardHeight }] = useMeasure<HTMLDivElement>();
   const [indexRef, { height: screenHeight, width: screenWidth }] = useMeasure<HTMLDivElement>();
   const config = useTypedSelector(selectConfig);
-  const { cellSize, rackTileSize, buttonSize } = getDims(config, screenHeight, screenWidth);
+  const { cellSize, messageHeight, rackTileSize, buttonSize } =
+    getDims(config, screenHeight, screenWidth);
   const isInitializedInitial = boardHeight > 0;
   const [isInitialized, setIsInitialized] = useState(isInitializedInitial);
   const activePlayer = useTypedSelector(selectActivePlayer);
@@ -138,6 +139,16 @@ const Index: FunctionComponent<Props> = ({ version }) => {
 
   useLocalStorage();
 
+  useEffect(() => {
+    console.log('screenHeight (from useMeasure): ' + screenHeight);
+    console.log('screenWidth (from useMeasure): ' + screenWidth);
+    console.log('window.innerHeight: ' + window.innerHeight);
+    console.log('window.innerWidth: ' + window.innerWidth);
+    console.log('boardHeight: ' + boardHeight);
+    console.log('buttonSize: ' + buttonSize);
+    console.log('rackTileSize: ' + rackTileSize);
+  });
+
   useEffectOnce(() => {
     dispatch(initialize());
 
@@ -168,12 +179,15 @@ const Index: FunctionComponent<Props> = ({ version }) => {
         </div>
 
         <Competitors
+          height={messageHeight}
           player0Name={username || 'You'}
           player1Name={opponentName}
           width={cellSize * config.boardWidth}
         />
 
-        <Message />
+        <Message
+          height={messageHeight}
+        />
 
         <div className={styles.contentWrapper}>
           <div className={styles.content}>

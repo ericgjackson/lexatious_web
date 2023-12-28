@@ -13,8 +13,12 @@ import {
 
 import styles from './Message.module.scss';
 
+interface Props {
+  height: number,
+}
+
 /* eslint-disable-next-line max-statements */
-const Message: FunctionComponent = () => {
+const Message: FunctionComponent<Props> = ({ height }) => {
   const activePlayer = useTypedSelector(selectActivePlayer);
   const errorMessage = useTypedSelector(selectErrorMessage);
   const invalid = useTypedSelector(selectInvalid);
@@ -23,7 +27,11 @@ const Message: FunctionComponent = () => {
   const player = useTypedSelector(selectPlayer);
   const winner = useTypedSelector(selectWinner);
   // 16px font * 1.5 for h2 * 1.5 for line height
-  const varStyle = { minHeight: 36 };
+  const varStyle = { minHeight: height };
+  const messageStyle = {
+    fontWeight: 'bold',
+    fontSize: height >= 36 ? '24px' : '16px',
+  };
 
   let message = '';
   if (errorMessage) {
@@ -60,7 +68,11 @@ const Message: FunctionComponent = () => {
 
   return (
     <div className={styles.messageContainer} style={varStyle}>
-      <h2>{message}</h2>
+      <span
+        style={messageStyle}
+      >
+        {message}
+      </span>
     </div>
   );
 };
