@@ -16,10 +16,11 @@
   justify-content: space-between;
 }
 
-.competitor0Container {
-  color: var(--color--p0tile);
-}
-
-.competitor1Container {
-  color: var(--color--p1tile);
+.competitorContainer {
+  &.p0color {
+    color: var(--color--p0tile);
+  }
+  &.p1color {
+    color: var(--color--p1tile);
+  }
 }
